@@ -7,8 +7,8 @@ The **sfToolsPlugin** provides some tools and debugging functions.
 
 Debugging functions:
 
-  * `dump()`  : Dumps an array or object. Display, die or return the result.
-Note that doctrine objects are automaticaly detected.
+  * `dump()` : Dumps an array or object. Displays, dies or returns the result.
+Note that doctrine objects are automatically detected.
   * `dump2()` : Same function as dump() but more suitable and readable for a console debug.
   * `getElapsedTime()`: Get the elapsed time between 2 time references.
 
@@ -17,9 +17,9 @@ Installation
 
  * Install the plugin:
 
-        $ symfony plugin:install sfDebugToolsPlugin
+        $ symfony plugin:install sfToolsPlugin
 
-   (download it and unzip in your `/plugins` directory or use svn `http://svn.symfony-project.com/plugins/sfDebugToolsPlugin/tags/sfToolsPlugin_1_0_0/`)
+   (download it and unzip in your `/plugins` directory or use an SVN external `http://svn.symfony-project.com/plugins/sfToolsPlugin/tags/RELEASE_1_0_0/`)
 
  * Clear you cache
 
@@ -39,22 +39,21 @@ Usage
 
 Will output:
 
-        Process stopped by sfDebugTools:dump()
-        » file     : C:\wamp\www\symfony1.4.14\apps\frontend\modules\index\actions\actions.class.php
-        » line     : 20
-        » class    : indexActions
-        » function : executeIndex
+      Process stopped by sfDebugTools:dump()
+      » file     : C:\wamp\www\symfony1.4.14\apps\frontend\modules\index\actions\actions.class.php
+      » line     : 20
+      » class    : indexActions
+      » function : executeIndex
 
+      $this->getUser()->getAttributeHolder() (sfNamespacedParameterHolder) :
+      sfNamespacedParameterHolder Object
+      (
+          [default_namespace:protected] => symfony/user/sfUser/attributes
+          [parameters:protected] => Array
+              (
+              )
 
-        $this->getUser()->getAttributeHolder() (sfNamespacedParameterHolder) :
-        sfNamespacedParameterHolder Object
-        (
-            [default_namespace:protected] => symfony/user/sfUser/attributes
-            [parameters:protected] => Array
-                (
-                )
-
-        )
+      )
 
 * Print an object without stopping the process
 
@@ -71,7 +70,7 @@ Will output:
 
 Acts the same way as `dump()` but doesn't display all the backtrace informations.
 
-### `getElapsedTime()`: 
+### `getElapsedTime()`:
 
 * Get the elapsed time between 2 time references:
 
@@ -83,19 +82,18 @@ Acts the same way as `dump()` but doesn't display all the backtrace informations
 
 Will output:
 
-        sleep in seconds :
-        0.7101
-
+    sleep in seconds:
+    0.7101
 
 >**TIP**
 >Of course if's better to add a shortcut in your base `actions` class, so you can call
 >it with:
->       [php]
->       $this->dump(...);
+>
+>        $this->dump(...);
 
 TODO
 ====
- 
+
 Support
 =======
 
@@ -113,6 +111,6 @@ See you. [COil](http://www.strangebuzz.com) :)
 
 ----
 
-This plugin is sponsored by [SQL Technologies](http://www.sqltechnologies.com)
+This plugin is sponsored by [SQL-Technologies](http://www.sqltechnologies.com)
 
  ![SQL Technologies](http://www.php-debug.com/images/sql.gif)

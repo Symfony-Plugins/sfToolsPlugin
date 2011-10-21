@@ -3,10 +3,11 @@
   <name>sfTaskLoggerPlugin</name>
   <channel>pear.symfony-project.com</channel>
   <summary>
-TODO
+The **sfToolsPlugin** provides some tools and debugging functions.
   </summary>
   <description>
-TODO
+The **sfToolsPlugin** provides some tools and debugging functions.
+* sfDebugTools.class.php (dump(), dump2(), getElapsedTime())
   </description>
   <lead>
     <name>Vernet Loic</name>
@@ -68,7 +69,7 @@ TODO
       <date>2011-10-21</date>
       <license>MIT</license>
       <notes>
-        * Added sfDebugTools
+        * Added the sfDebugTools class
         * This is the 1st release of the plugin
       </notes>
     </release>

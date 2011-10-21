@@ -23,26 +23,26 @@ class sfDebugTools
   public static function dump($var, $name = 'var', $die = false, $return_buffer = false)
   {
     ob_start();
-    print('<br/><pre>'. $name . (is_object($var) ? ' ('. get_class($var). ')' : ''). ' :<br/>');
+    print('<br/><pre>'. $name . (is_object($var) ? ' ('. get_class($var). ')' : ''). ' :'. PHP_EOL);
     print_r($var instanceof sfDoctrineRecord || $var instanceof Doctrine_Collection ? $var->toArray(true) : $var);
-    print('</pre></br>');
+    print('</pre>');
     $buffer = ob_get_contents();
     ob_end_clean();
 
     $backtrace = debug_backtrace();
-    $dieMsg ='<pre>';
+    $dieMsg = '<pre>';
     if ($die)
     {
       $dieMsg .= '<b>Process stopped by sfDebugTools:dump()</b>'. PHP_EOL;
     }
     $dieMsg .= isset($backtrace[0]['file']) ?     '&raquo; file     : <b>'.
-    $backtrace[0]['file'] .'</b>'. PHP_EOL : '';
+      $backtrace[0]['file'] .'</b>'. PHP_EOL : '';
     $dieMsg .= isset($backtrace[0]['line']) ?     '&raquo; line     : <b>'.
-    $backtrace[0]['line'] .'</b>'. PHP_EOL : '';
+      $backtrace[0]['line'] .'</b>'. PHP_EOL : '';
     $dieMsg .= isset($backtrace[1]['class']) ?    '&raquo; class    : <b>'.
-    $backtrace[1]['class'] .'</b>'. PHP_EOL : '';
+      $backtrace[1]['class'] .'</b>'. PHP_EOL : '';
     $dieMsg .= isset($backtrace[1]['function']) ? '&raquo; function : <b>'.
-    $backtrace[1]['function'] .'</b>'. PHP_EOL : '';
+      $backtrace[1]['function'] .'</b>'. PHP_EOL : '';
     $dieMsg .= '</pre>';
 
     if($return_buffer)
@@ -75,17 +75,12 @@ class sfDebugTools
     print($name . ' : >');
     print_r($var instanceof sfDoctrineRecord || $var instanceof Doctrine_Collection ? $var->toArray(true) : $var);
     print('<'. PHP_EOL);
-
     $buffer = ob_get_contents();
     ob_end_clean();
 
     if($return_buffer)
     {
       return $buffer;
-    }
-    else
-    {
-      print($buffer);
     }
 
     if ($die == true)
