@@ -12,8 +12,8 @@
 class sfDebugTools
 {
   /**
-   * Dumps an array or object. Display, die or return the result. Note that doctrine
-   * objects are automaticaly detected.
+   * Dumps an array or object. Display, die or return the result. Note that Doctrine
+   * objects are automaticaly detected and escaped as arrays of values.
    *
    * @param $var            mixed   Variable to dump
    * @param $name           String  Name of the var to dump

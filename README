@@ -1,15 +1,15 @@
 sfToolsPlugin
 -------------
 
-The **sfToolsPlugin** provides some tools and debugging functions.
+The **sfToolsPlugin** provides some tools and debugging functions:
 
 ## sfDebugTools.class.php
 
 Debugging functions:
 
-  * `dump()` : Dumps an array or object. Displays, dies or returns the result.
-Note that doctrine objects are automatically detected.
-  * `dump2()` : Same function as dump() but more suitable and readable for a console debug.
+  * `dump()`: Dumps an array or object. Displays, dies or returns the result.
+Note that Doctrine objects are automatically detected.
+  * `dump2()`: Same function as dump() but more suitable and readable for a console debug.
   * `getElapsedTime()`: Get the elapsed time between 2 time references.
 
 Installation
@@ -19,7 +19,7 @@ Installation
 
         $ symfony plugin:install sfToolsPlugin
 
-   (download it and unzip in your `/plugins` directory or use an SVN external `http://svn.symfony-project.com/plugins/sfToolsPlugin/tags/RELEASE_1_0_0/`)
+   (Download it and unzip in your `/plugins` directory or use an SVN external `http://svn.symfony-project.com/plugins/sfToolsPlugin/tags/RELEASE_1_0_0/`)
 
  * Clear you cache
 
@@ -60,7 +60,7 @@ Will output:
         [php]
         sfDebugTools::dump($this->getUser()->getAttributeHolder(), '$this->getUser()->getAttributeHolder()', false);
 
-* Retrieve the dump of an object
+* Retrieve the dump of an object as a string
 
         [php]
         $dump = sfDebugTools::dump($this->getUser()->getAttributeHolder(), '$this->getUser()->getAttributeHolder()', false, true);
