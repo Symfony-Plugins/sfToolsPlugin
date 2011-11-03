@@ -20,12 +20,12 @@ $t->is(sfFileTools::sanitizeFilename('  sensio'), 'sensio', '::sanitizeFilename(
 $t->is(sfFileTools::sanitizeFilename('sensio  '), 'sensio', '::sanitizeFilename() removes spaces at the end of a string');
 $t->is(sfFileTools::sanitizeFilename('paris,france'), 'parisfrance', '::sanitizeFilename() removes non-ASCII characters');
 $t->is(sfFileTools::sanitizeFilename('sen_sio  '), 'sen_sio', '::sanitizeFilename() keeps separators');
-$t->is(sfFileTools::sanitizeFilename('sen______sio  '), 'sen_sio', '::sanitizeFilename() convert succeding separators');
+$t->is(sfFileTools::sanitizeFilename('sen______sio  '), 'sen_sio', '::sanitizeFilename() converts succeding separators');
 $t->is(sfFileTools::sanitizeFilename('.gif'), '.gif', '::sanitizeFilename() handles file with only the extension');
-$t->is(sfFileTools::sanitizeFilename('tO To.GiF'), 'toto.gif', '::sanitizeFilename() lower case filename and extension');
+$t->is(sfFileTools::sanitizeFilename('tO To.GiF'), 'toto.gif', '::sanitizeFilename() lowercase filename and extension');
 $t->is(sfFileTools::sanitizeFilename('-__.gif'), '_.gif', '::sanitizeFilename() handles separator in start of file after a non-ASCII caracter');
 $t->is(sfFileTools::sanitizeFilename('Copie de openoffice-org_openoffice.org_3.3.3_final_francais_10677.exe'), 'copiedeopenofficeorg_openoffice.org_3.3.3_final_francais_10677.exe', '::sanitizeFilename() another example');
 $t->is(sfFileTools::sanitizeFilename('sfToolsPlugin.jpg'), 'sftoolsplugin.jpg', '::sanitizeFilename() another example');
 $t->is(sfFileTools::sanitizeFilename('Copie de toto.jPeG'), 'copiedetoto.jpeg', '::sanitizeFilename() another example');
 $t->is(sfFileTools::sanitizeFilename('logo_edition_1314352521.jpg'), 'logo_edition_1314352521.jpg', '::sanitizeFilename() file name returned if no modification was needed');
-$t->is(sfFileTools::sanitizeFilename('fil€_system.jpg'), 'filEUR_system.jpg', '::sanitizeFilename() convert the euro symbol');
+$t->is(sfFileTools::sanitizeFilename('fil€_system.jpg'), 'fileur_system.jpg', '::sanitizeFilename() converts the euro symbol');

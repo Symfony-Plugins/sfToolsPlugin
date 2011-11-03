@@ -32,7 +32,7 @@ class sfFileTools
     }
 
     // Remove all characters that are not the separator, letters, numbers, dot or whitespace
-    $sFileName = preg_replace("/[^ a-zA-Z\_\d\.]|\s/", '', $sFileName);
+    $sFileName = preg_replace("/[^ a-zA-Z\_\d\.]|\s/", '', strtolower($sFileName));
 
     // Replace all separator characters by a single separator
     $sFileName = preg_replace('!['. preg_quote($sSeparator).'\s]+!u', $sSeparator, $sFileName);
