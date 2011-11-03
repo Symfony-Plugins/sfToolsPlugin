@@ -7,7 +7,8 @@ The **sfToolsPlugin** provides some tools and debugging functions.
   </summary>
   <description>
 The **sfToolsPlugin** provides some tools and debugging functions.
-* sfDebugTools.class.php (dump(), dump2(), getElapsedTime())
+* sfDebugTools (dump(), dump2(), getElapsedTime())
+* sfFileTools (sanitizeFilename())
   </description>
   <lead>
     <name>Vernet Loic</name>
@@ -15,10 +16,10 @@ The **sfToolsPlugin** provides some tools and debugging functions.
     <email>qrf_coil@yahoo.fr</email>
     <active>yes</active>
   </lead>
-  <date>2011-10-21</date>
+  <date>2011-11-03</date>
   <version>
-    <release>1.0.0</release>
-    <api>1.0.0</api>
+    <release>1.0.1</release>
+    <api>1.0.1</api>
   </version>
   <stability>
     <release>stable</release>
@@ -31,6 +32,14 @@ The **sfToolsPlugin** provides some tools and debugging functions.
       <dir name="lib">
         <dir name="debug">
           <file name="sfDebugTools.class.php" role="data" />
+        </dir>
+        <dir name="utils">
+          <file name="sfFileTools.class.php" role="data" />
+        </dir>
+      </dir>
+      <dir name="test">
+        <dir name="unit">
+          <file name="sfFileToolsTest.php" role="data" />
         </dir>
       </dir>
       <file name="LICENSE" role="data" />
@@ -66,10 +75,10 @@ The **sfToolsPlugin** provides some tools and debugging functions.
        <api>stable</api>
       </stability>
       <license uri="http://www.symfony-project.com/license">MIT license</license>
-      <date>2011-10-28</date>
+      <date>2011-11-03</date>
       <license>MIT</license>
       <notes>
-        * Fixed typos
+        * Added the sfFileTools class + unit tests
       </notes>
     </release>
     <release>

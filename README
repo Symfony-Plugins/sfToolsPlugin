@@ -12,6 +12,13 @@ Note that Doctrine objects are automatically detected.
   * `dump2()`: Same function as dump() but more suitable and readable for a console debug.
   * `getElapsedTime()`: Get the elapsed time between 2 time references.
 
+## sfFileTools.class.php
+
+File tools functions:
+
+  * `sanitizeFilename()`: Make a filename safe to use in the OS, command line...
+  (need `iconv` to be installed)
+
 Installation
 ------------
 
@@ -19,7 +26,7 @@ Installation
 
         $ symfony plugin:install sfToolsPlugin
 
-   (Download it and unzip in your `/plugins` directory or use an SVN external `http://svn.symfony-project.com/plugins/sfToolsPlugin/tags/RELEASE_1_0_0/`)
+   (Download it and unzip in your `/plugins` directory or use an SVN external `http://svn.symfony-project.com/plugins/sfToolsPlugin/tags/RELEASE_1_0_1/`)
 
  * Clear you cache
 
@@ -85,6 +92,19 @@ Will output:
     sleep in seconds:
     0.7101
 
+## sfFileTools.class.php
+
+### `sanitizeFilename()`:
+
+ * Make a filename safe to use in the OS, command line:
+
+        [php]
+        echo sfFileTools::sanitizeFilename('--logö  _  __   ___   ora@@ñ--~gé--.gif');
+        
+Will output:
+
+    "logo_orange.gif"
+    
 >**TIP**
 >Of course if's better to add a shortcut in your base `actions` class, so you can call
 >it with:
