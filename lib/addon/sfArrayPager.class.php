@@ -8,7 +8,7 @@
  *    $this->pager = new myArrayPager(null, 15);
  *    $this->pager->setResultArray($myArrayOfThings);
  *    $this->pager->setPage($this->getRequestParameter('page',1));
- *    Ò$this->pager->init();
+ *    $this->pager->init();
  *
  * @see http://snippets.symfony-project.org/snippet/177
  */
