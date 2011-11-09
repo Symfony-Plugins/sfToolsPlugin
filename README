@@ -19,14 +19,27 @@ File tools functions:
   * `sanitizeFilename()`: Make a filename safe to use in the OS, command line...
   (need `iconv` to be installed)
 
+## sfFixflashSessionStorage.class.php
+
+Session storage handler to avoid the session loss problem with Flash upload.
+
+## sfAdvFilesystem.class.php ##
+
+The sfAdvFilesystem class extends the original sfFileSystem class with several
+useful funtions.
+
+  * `clearDir`: Clear the content of a directory
+  * `clearDirRec`: Clear the content of a directory recursively
+  * `copy`: Copy a file and returns if succeded of not.
+
 Installation
 ------------
 
- * Install the plugin:
+ * Install the plugin: (depends on the symfony you are using)
 
         $ symfony plugin:install sfToolsPlugin
 
-   (Download it and unzip in your `/plugins` directory or use an SVN external `http://svn.symfony-project.com/plugins/sfToolsPlugin/tags/RELEASE_1_0_1/`)
+   (Download it and unzip in your `/plugins` directory or use an SVN external `http://svn.symfony-project.com/plugins/sfToolsPlugin/tags/RELEASE_1_0_2/`)
 
  * Clear you cache
 
@@ -104,7 +117,40 @@ Will output:
 Will output:
 
     "logo_orange.gif"
-    
+
+## sfFixflashSessionStorage.class.php
+
+Update your `factories.yml` file:
+
+    all:
+      storage:
+        class: sfFixflashSessionStorage
+        param:
+          session_name: "mySymfonySession"
+
+Then when using your flash Uploader, use something like this:
+
+    [php]
+    echo url_for("fileinfo/upload"); ?>?session_id=<?php echo session_id() ?>",
+
+## sfAdvFilesystem.class ##
+
+ * `clearDir`: Clears the content of a directory
+
+        [php]
+        $fs = new sfAdvFilesystem();
+        $fs->clearDir('/var/www/myProject/web/upload/photos/user46546/big')
+
+ * `clearDirRec`: Clears the content of a directory recursively
+
+        [php]
+        $fs->clearDirRec('/var/www/myProject/upload/temp', '/temp');
+
+ * `copy`: Copy a file and return if succeded of not.
+
+        [php]
+        $ret = $fs->copy('/var/www/myProject/web/uploads/tmp/users/5455_thumb.jpg', '/var/www/myProject/web/uploads/thumbs/user5455_thumb.jpg', array('override' => true));
+
 >**TIP**
 >Of course if's better to add a shortcut in your base `actions` class, so you can call
 >it with:
