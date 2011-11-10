@@ -3,12 +3,15 @@
   <name>sfToolsPlugin</name>
   <channel>pear.symfony-project.com</channel>
   <summary>
-The **sfToolsPlugin** provides some tools and debugging functions.
+The **sfToolsPlugin** provides some tools and debugging functions. Most of the code
+was collected from the symfony official snippets application.
   </summary>
   <description>
 The **sfToolsPlugin** provides some tools and debugging functions.
-* sfDebugTools (dump(), dump2(), getElapsedTime())
-* sfFileTools (sanitizeFilename())
+* sfDebugTools (debugging functions)
+* sfFileTools (files tools functions)
+* sfFixflashSessionStorage (fix flash session bug)
+* sfAdvFilesystem (extends the sfFilesystem class)
   </description>
   <lead>
     <name>Vernet Loic</name>
@@ -16,10 +19,10 @@ The **sfToolsPlugin** provides some tools and debugging functions.
     <email>qrf_coil@yahoo.fr</email>
     <active>yes</active>
   </lead>
-  <date>2011-11-03</date>
+  <date>2011-11-10</date>
   <version>
-    <release>1.0.1</release>
-    <api>1.0.1</api>
+    <release>1.0.2</release>
+    <api>1.0.2</api>
   </version>
   <stability>
     <release>stable</release>
@@ -32,6 +35,12 @@ The **sfToolsPlugin** provides some tools and debugging functions.
       <dir name="lib">
         <dir name="debug">
           <file name="sfDebugTools.class.php" role="data" />
+        </dir>
+        <dir name="storage">
+          <file name="sfFixflashSessionStorage.class.php" role="data" />
+        </dir>
+        <dir name="task">
+          <file name="sfAdvFilesystem.class.php" role="data" />
         </dir>
         <dir name="utils">
           <file name="sfFileTools.class.php" role="data" />
@@ -65,6 +74,23 @@ The **sfToolsPlugin** provides some tools and debugging functions.
   </dependencies>
   <phprelease />
   <changelog>
+    <release>
+      <version>
+        <release>1.0.2</release>
+        <api>1.0.2</api>
+      </version>
+      <stability>
+       <release>stable</release>
+       <api>stable</api>
+      </stability>
+      <license uri="http://www.symfony-project.com/license">MIT license</license>
+      <date>2011-11-10</date>
+      <license>MIT</license>
+      <notes>
+        * Added the sfFixflashSessionStorage class (flash session bug)
+        * Added the sfAdvFilesystem class (extends the sfFilesystem class)
+      </notes>
+    </release>
     <release>
       <version>
         <release>1.0.1</release>
