@@ -75,16 +75,9 @@ class sfAdvFilesystem extends sfFilesystem
   }
 
   /**
-   * Copies a file.
+   * Copies a file. Same as the sfFilesystem function but return a boolean.
    *
-   * This method only copies the file if the origin file is newer than the target file.
-   * By default, if the target already exists, it is not overriden.
-   * To override existing files, pass the "override" option.
-   * False is returned if the copy fails, true in all other cases.
-   *
-   * @param string $originFile  The original filename
-   * @param string $targetFile  The target filename
-   * @param array  $options     An array of options
+   * @see sfFilesystem
    * 
    * @return Boolean
    */

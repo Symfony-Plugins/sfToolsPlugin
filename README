@@ -146,7 +146,7 @@ Then when using your flash Uploader, use something like this:
         [php]
         $fs->clearDirRec('/var/www/myProject/upload/temp', '/temp');
 
- * `copy`: Copy a file and return if succeded of not.
+ * `copy`: Copy a file and returns true on success, false otherwise
 
         [php]
         $ret = $fs->copy('/var/www/myProject/web/uploads/tmp/users/5455_thumb.jpg', '/var/www/myProject/web/uploads/thumbs/user5455_thumb.jpg', array('override' => true));

@@ -7,7 +7,7 @@ The **sfToolsPlugin** provides some tools and debugging functions. Most of the c
 was collected from the symfony official snippets application.
   </summary>
   <description>
-The **sfToolsPlugin** provides some tools and debugging functions.
+The **sfToolsPlugin** provides some tools and debugging functions:
 * sfDebugTools (debugging functions)
 * sfFileTools (files tools functions)
 * sfFixflashSessionStorage (fix flash session bug)
@@ -19,7 +19,7 @@ The **sfToolsPlugin** provides some tools and debugging functions.
     <email>qrf_coil@yahoo.fr</email>
     <active>yes</active>
   </lead>
-  <date>2011-11-10</date>
+  <date>2011-12-13</date>
   <version>
     <release>1.0.2</release>
     <api>1.0.2</api>
@@ -84,9 +84,11 @@ The **sfToolsPlugin** provides some tools and debugging functions.
        <api>stable</api>
       </stability>
       <license uri="http://www.symfony-project.com/license">MIT license</license>
-      <date>2011-11-10</date>
+      <date>2011-12-13</date>
       <license>MIT</license>
       <notes>
+        * Added a demo module
+        * Fixed unit tests for sfFileTools
         * Added the sfFixflashSessionStorage class (flash session bug)
         * Added the sfAdvFilesystem class (extends the sfFilesystem class)
       </notes>

@@ -7,12 +7,11 @@
 
 include_once(dirname(__FILE__). '/../../../../test/bootstrap/unit.php');
 include_once(dirname(__FILE__). '/../../lib/utils/sfFileTools.class.php');
-$t = new lime_test(17, new lime_output_color());
 
-// 1st test may not pass under windows or if your locale is not set correctly
-//setlocale(LC_ALL, 'en_US.UTF-8');
+$t = new lime_test(18, new lime_output_color());
 
 $t->is(sfFileTools::sanitizeFilename('--logö  _  __   ___   ora@@ñ--~gé--.gif'), 'logo_orange.gif', '::sanitizeFilename() handles complex filename with specials chars');
+$t->is(sfFileTools::sanitizeFilename('--LOgÖ  _  __   ___   ORA@@Ñ--~GË--.gif'), 'logo_orange.gif', '::sanitizeFilename() lowerize the filename even with accents');
 $t->is(sfFileTools::sanitizeFilename('SeNsiO'), 'sensio', '::sanitizeFilename() converts all characters to lower case');
 $t->is(sfFileTools::sanitizeFilename('sensio labs'), 'sensiolabs', '::sanitizeFilename() removes a white space');
 $t->is(sfFileTools::sanitizeFilename('sensio   labs'), 'sensiolabs', '::sanitizeFilename() removes  several white spaces');

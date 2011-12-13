@@ -28,7 +28,7 @@ class sfFileTools
     // Remove accents
     if (function_exists('iconv'))
     {
-      $sFileName = iconv('UTF-8', 'us-ascii//TRANSLIT', strtolower($sFileName));
+      $sFileName = iconv('UTF-8', 'us-ascii//TRANSLIT', $sFileName);
     }
 
     // Remove all characters that are not the separator, letters, numbers, dot or whitespace
